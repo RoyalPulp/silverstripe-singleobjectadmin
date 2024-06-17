@@ -172,7 +172,7 @@ class SingleObjectAdmin extends LeftAndMain implements PermissionProvider
      *
      * @return DBHTMLText|string
      */
-    public function getSilverStripeNavigator()
+    public function getSilverStripeNavigator(?DataObject $record = null)
     {
         return $this->renderWith(SingleObjectAdmin::class . '_SilverStripeNavigator');
     }
@@ -180,7 +180,7 @@ class SingleObjectAdmin extends LeftAndMain implements PermissionProvider
     /**
      * @return PjaxResponseNegotiator
      */
-    public function getResponseNegotiator()
+    public function getResponseNegotiator(): PjaxResponseNegotiator
     {
         $neg = parent::getResponseNegotiator();
         $controller = $this;
